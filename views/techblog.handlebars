@@ -1,0 +1,17 @@
+<div class='menu-container' align="center">
+  <div class='menu-container' align="center">
+      <h2 class="bg-success"> {{user_name}}, Tech-Blog</h2>
+      <br />
+    {{#each techDatas as |techData|}}
+    <div class="gallery-name blog-size" >
+      <h4> <span style="text-transform:uppercase;" >{{techData.destination}}</span> &nbsp; - &nbsp;  from: {{format_date techData.start_date}} to: {{ format_date techData.end_date}}</h4>
+      <h4> {{techData.note}}</h4>
+    </div>
+     <br/>
+    {{/each}}
+    
+  </div>
+</div>
+
+<!-- This is the form for retrieving saved logs -->
+<script src='/js/addBlog.js'></script>

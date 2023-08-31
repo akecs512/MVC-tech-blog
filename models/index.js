@@ -1,19 +1,19 @@
 // import models
 const Users = require('./Users');
-const TravelInfo = require('./Travel_Info');
+const TechInfo = require('./Tech_Info');
 
-// TravelInfo belongsTo Users
-TravelInfo.belongsTo(Users, {
+// TechInfo belongsTo Users
+TechInfo.belongsTo(Users, {
   foreignKey: 'user_id',
 });
 
-// Users have many TravelInfo
-Users.hasMany(TravelInfo, {
+// Users have many TechInfo
+Users.hasMany(TechInfo, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
 module.exports = {
-  TravelInfo,
+  TechInfo,
   Users,
 };

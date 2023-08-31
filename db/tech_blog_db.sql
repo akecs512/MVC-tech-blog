@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.33, for macos11.7 (arm64)
 --
--- Host: localhost    Database: traveler_db
+-- Host: localhost    Database: tech_blog_db
 -- ------------------------------------------------------
 -- Server version	8.0.33
 
@@ -43,35 +43,33 @@ INSERT INTO `Sessions` VALUES ('ai74hFj_7y1fTO-B2rfMtHatEb7gb7GQ','2023-08-19 18
 UNLOCK TABLES;
 
 --
--- Table structure for table `travel_info`
+-- Table structure for table `tech_info`
 --
 
-DROP TABLE IF EXISTS `travel_info`;
+DROP TABLE IF EXISTS `tech-info;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `travel_info` (
+CREATE TABLE `tech_info` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `destination` varchar(255) NOT NULL,
-  `start_date` date NOT NULL,
-  `end_date` date NOT NULL,
-  `note` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `user_id` int DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
-  CONSTRAINT `travel_info_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE
+  CONSTRAINT `tech_info_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `travel_info`
+-- Dumping data for table `tech_info`
 --
 
-LOCK TABLES `travel_info` WRITE;
-/*!40000 ALTER TABLE `travel_info` DISABLE KEYS */;
-INSERT INTO `travel_info` VALUES (1,'New York','2023-08-02 00:00:00', '2023-08-02 00:00:00','statue',NULL,'2023-08-18 20:39:44','2023-08-18 20:39:44'),(2,'austin','2023-08-02 00:00:00','2023-08-02 00:00:00','downtown',NULL,'2023-08-18 21:35:17','2023-08-18 21:35:17');
-/*!40000 ALTER TABLE `travel_info` ENABLE KEYS */;
+LOCK TABLES `tech_info` WRITE;
+/*!40000 ALTER TABLE `tech_info` DISABLE KEYS */;
+INSERT INTO `tech_info` VALUES (1,'New York','2023-08-02 00:00:00', '2023-08-02 00:00:00','statue',NULL,'2023-08-18 20:39:44','2023-08-18 20:39:44'),(2,'austin','2023-08-02 00:00:00','2023-08-02 00:00:00','downtown',NULL,'2023-08-18 21:35:17','2023-08-18 21:35:17');
+/*!40000 ALTER TABLE `tech_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

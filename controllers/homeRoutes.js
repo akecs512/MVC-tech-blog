@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const {TravelInfo} = require("../models");
+const {TechInfo} = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get('/', (req, res) => {
@@ -25,18 +25,18 @@ router.get('/login', (req, res) => {
     }
 });
 
-router.get('/travelogue', withAuth, async (req, res) => {
+router.get('/techblog', withAuth, async (req, res) => {
     try {
-     // find all travel info
-    const dbtravelData = await TravelInfo.findAll({
+     // find all blog info
+    const dbtechData = await TechInfo.findAll({
       where:{user_id: req.session.user_id}
     });
-    const travelDatas = dbtravelData.map((travel_info) =>
-    travel_info.get({plain: true})
+    const techDatas = dbtechData.map((tech_info) =>
+    tech_info.get({plain: true})
     );
-        // res.render('travelogue', {travelDatas});
-        res.render('travelogue', {
-          travelDatas,
+        // res.render('techblog', {techDatas});
+        res.render('techblog', {
+          techDatas: techDatas,
           logged_in: req.session.logged_in,
           user_name: req.session.username,
         });

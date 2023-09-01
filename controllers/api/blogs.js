@@ -4,7 +4,6 @@ const router = require("express").Router();
 
 router.get("/:id", async (req, res) => {
   const blog = await TechInfo.findOne({ where: { id: req.params.id } });
-  console.log(blog);
   res.render("blogs", { blog: blog.get({ plain: true }) });
 });
 

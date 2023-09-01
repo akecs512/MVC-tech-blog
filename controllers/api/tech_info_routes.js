@@ -8,6 +8,7 @@ const User = require('../../models/Users');
   try { 
       const data = {...req.body,"user_id":req.session.user_id}
       const techData = await TechInfo.create(data);
+      console.log(techData);
 
     res.status(200).json(techData)
   } catch (err) {

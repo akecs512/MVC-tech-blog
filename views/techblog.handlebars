@@ -5,7 +5,7 @@
     {{#each techDatas as |techData|}}
     <div class="gallery-name blog-size" >
       <h4> <span style="text-transform:uppercase;" >{{techData.blog_title}}</span><h4>
-      <h4> {{techData.blog_description}}</h4>
+      <h4> {{format_date techData.createdAt}}</h4>
     </div>
      <br/>
     {{/each}}

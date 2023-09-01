@@ -5,7 +5,7 @@
     {{#each techDatas as |techData|}}
       <div class="gallery-name blog-size">
         <header style="display: flex; justify-content: space-between">
-          <h4><a href='/blogs/{{techData.id}}'>{{techData.blog_title}}</a></h4>
+          <h4><a href='/api/blogs/{{techData.id}}'>{{techData.blog_title}}</a></h4>
           <span>Created by
             {{techData.user_id}}&nbsp;on&nbsp;{{format_date
               techData.createdAt}}</span>

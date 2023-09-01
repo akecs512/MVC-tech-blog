@@ -66,11 +66,11 @@ nav a:hover {
   background-color: var(--dark);
 }
 
-.text-border{
+.text-border {
   border: 3px solid var(--tertiary);
 }
 
-.blog-size{
+.blog-size {
   font-size: 100%;
 }
 
@@ -103,7 +103,9 @@ img {
 .painting {
   width: 50%;
   background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
 }
 

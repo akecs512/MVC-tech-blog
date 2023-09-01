@@ -3,17 +3,14 @@
     <h2 class="bg-success"> {{user_name}} Tech-Blog</h2>
     <br />
 
-      <div class="gallery-name blog-size">
-        <header style="display: flex; justify-content: space-between">
-          <h4>{{blog.blog_title}}</h4>
-          <span>Created by
-            {{blog.user_id}}&nbsp;on&nbsp;{{format_date
-              blog.createdAt}}</span>
-        </header>
-        <section>{{blog.blog_description}}</section>
-      </div>
-      <br />
+    <div class="gallery-name blog-size">
+      <header style="display: flex; justify-content: space-between">
+        <h4>{{blog.blog_title}}</h4>
+        <span>Created by
+          {{blog.user_id}}&nbsp;on&nbsp;{{format_date blog.createdAt}}</span>
+      </header>
+      <section>{{blog.blog_description}}</section>
+    </div>
+    <br />
   </div>
 </div>
-
- 

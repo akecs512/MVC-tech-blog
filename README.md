@@ -1,32 +1,29 @@
 # TRAVELOGUE
 
-
-
-
 ![TLLogo06](https://github.com/akecs512/project-2-challenge/assets/79340489/9ecf7c70-90b2-420f-bfd6-10850957c14f)
-
 
 ## Description
 
-Travelogue provides a user-friendly experience to quickly create a log of all your trips, including the destination, dates, and any notes you want to remember. The application is easy to use. Simply sign in and begin logging your travels. 
+Travelogue provides a user-friendly experience to quickly create a log of all your trips, including the destination, dates, and any notes you want to remember. The application is easy to use. Simply sign in and begin logging your travels.
 
 From the landing page, you can click the login button and be directed to the login screen. If you do not already have an account, you are offered the option to register with a user name, email, and password.
 
 Once you are logged in, you will be presented with a page where you can enter in the dates, destination, and any travel notes you may have about your trip. Then hit the submit button and your information will be saved as a travelogue and the entry fields will clear so that you can enter another trip.
 
-The log is added to a list of previous entries. 
+The log is added to a list of previous entries.
 
 ## Table of Contents
+
 - [Website Preview](#website-preview)
 - [Concept](#concept)
-    - [User Story](#user-story)
-    - [Motivation and Development](#motivation-and-development)
+  - [User Story](#user-story)
+  - [Motivation and Development](#motivation-and-development)
 - [Process](#process)
-    - [Technologies Used](#technologies-used)
+  - [Technologies Used](#technologies-used)
 - [Future Development](#future-development)
 - [Credits](#credits)
 - [Resources](#resources)
-    - [Argon2](#argon2)
+  - [Argon2](#argon2)
 - [Special Thanks](#special-thanks)
 - [License](#license)
 
@@ -42,8 +39,6 @@ https://travelogue-application-10ca673e5794.herokuapp.com/
 
 <img width="423" alt="Screen Shot 2023-08-20 at 2 57 51 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/e0e56649-da42-4a7d-b87e-77515beed5a0">
 
-
-
 ## Concept
 
 - ### User Story
@@ -51,7 +46,6 @@ https://travelogue-application-10ca673e5794.herokuapp.com/
       AS a user,
       I WANT to be able to write and save notes about my travels
       SO THAT i can keep track and view the dates, destinations, and thoughts about my trips.
-
 
 - ### Acceptance Criteria
 
@@ -62,44 +56,39 @@ https://travelogue-application-10ca673e5794.herokuapp.com/
         THEN the new log is saved and appears on the home page, along with previous entries.
         IF I click on the dashboard, I can enter a new log.
 
-      
-      
 - ### Motivation/Development
 
           Going on any trip can be a memorable experience. Whether it is one trip or many travels, this website provides a way to remember those experiences by providing a logue of the dates, destinations, and any memories you want to record in the notes, forever peserving all your travels in one place, and allowing you to read them time and time again.
-  
-            Our collaborative project has brought us to solve a problem that a lot of people may have. So everytime you take a trip, rememeber to login, create a new logue, or revisit your previous trips and remember your travels forever. 
 
+            Our collaborative project has brought us to solve a problem that a lot of people may have. So everytime you take a trip, rememeber to login, create a new logue, or revisit your previous trips and remember your travels forever.
 
 - ## Technologies Used
 
-    - ### Argon2
-    - ### Handlebars js
-    - ### mySQL & Sequelize
-    - ### Heroku
+  - ### Argon2
+  - ### Handlebars js
+  - ### mySQL & Sequelize
+  - ### Heroku
 
 - ## Future Development
 
-    - ### Adding a photologue would give the user the ability to add pictures of their travels to their travelogues and add another way for them to visually revist their travels.
- 
-    - ### The ability to share the travelogues would allow the user to send their travel memories to friends and family.
+  - ### Adding a photologue would give the user the ability to add pictures of their travels to their travelogues and add another way for them to visually revist their travels.
+  - ### The ability to share the travelogues would allow the user to send their travel memories to friends and family.
 
-    -### Give the user the ability to go back and add or change notes.
-      
+  -### Give the user the ability to go back and add or change notes.
 
 - ## Credits
 
 - ### Resources
-    - #### Argon2
 
-        - (https://argon2.online/)
+  - #### Argon2
 
+    - (https://argon2.online/)
 
 - ## Special Thanks
 
-    - ### Thanks goes out to all the instructors and teacher assistants for their clear instruction and prompt and thorough answers to all our questions.
+  - ### Thanks goes out to all the instructors and teacher assistants for their clear instruction and prompt and thorough answers to all our questions.
 
-    - ### Also, thanks to the development team. Each member brought fantastic ideas and great skills to make this website work.
+  - ### Also, thanks to the development team. Each member brought fantastic ideas and great skills to make this website work.
 
 ## License
 

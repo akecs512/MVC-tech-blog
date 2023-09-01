@@ -1,22 +1,21 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  const email = document.querySelector('#email-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
-  
+  const email = document.querySelector("#email-login").value.trim();
+  const password = document.querySelector("#password-login").value.trim();
 
   if (email && password) {
-    const response = await fetch('/api/user/login', {
-      method: 'POST',
+    const response = await fetch("/api/user/login", {
+      method: "POST",
       body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      alert('You have successfully logged in. Welcome back!!');
-      document.location.replace('/');
+      alert("You have successfully logged in. Welcome back!!");
+      document.location.replace("/");
     } else {
-      alert('Failed to log in.');
+      alert("Failed to log in.");
     }
   }
 };
@@ -24,42 +23,40 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const username = document.querySelector('#username-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+  const username = document.querySelector("#username-signup").value.trim();
+  const email = document.querySelector("#email-signup").value.trim();
+  const password = document.querySelector("#password-signup").value.trim();
 
   if (username && email && password) {
-
-    const response = await fetch('/api/user', {
-
-      method: 'POST',
+    const response = await fetch("/api/user", {
+      method: "POST",
       body: JSON.stringify({ username, email, password }),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace("/");
     } else {
-      alert('Failed to sign up.');
+      alert("Failed to sign up.");
     }
   }
 };
 
 document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+  .querySelector(".login-form")
+  .addEventListener("submit", loginFormHandler);
 
 document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+  .querySelector(".signup-form")
+  .addEventListener("submit", signupFormHandler);
 
-  const loggedIn = true;
+const loggedIn = true;
 
-  // if(loggedIn) {
-  //   // document.querySelector('#logout').style.display = 'block';
-  //   document.querySelector('#login').style.display = 'hidden';
+// if(loggedIn) {
+//   // document.querySelector('#logout').style.display = 'block';
+//   document.querySelector('#login').style.display = 'hidden';
 
-  // }else{
-  //   document.querySelector('#login').style.display = 'block';
-  //   document.querySelector('#logout').style.display = 'hidden';
-  // }
+// }else{
+//   document.querySelector('#login').style.display = 'block';
+//   document.querySelector('#logout').style.display = 'hidden';
+// }

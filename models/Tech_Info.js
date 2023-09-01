@@ -33,7 +33,7 @@ TechInfo.init(
     freezeTableName: true,
     underscored: true,
     modelName: "tech_info",
-  }
+  },
 );
 
 module.exports = TechInfo;

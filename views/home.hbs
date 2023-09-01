@@ -1,0 +1,6 @@
+<h1>Everyone's Tech Blog</h1>
+<div class="d-flex flex-column gap-2">
+  {{#each posts as |post|}}
+  {{> postCard creator=post.user.username title=post.title createdAt=post.createdAt description=post.description postId=post.id}}
+  {{/each}}
+</div>

@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-const argon2 = require('argon2');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
+const argon2 = require("argon2");
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -39,7 +39,9 @@ User.init(
   {
     hooks: {
       async beforeCreate(newUserData) {
-        newUserData.password = await argon2.hash(newUserData.password, {hashLength:40});
+        newUserData.password = await argon2.hash(newUserData.password, {
+          hashLength: 40,
+        });
         return newUserData;
       },
     },
@@ -47,8 +49,8 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
-  }
+    modelName: "user",
+  },
 );
 
 module.exports = User;

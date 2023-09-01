@@ -1,12 +1,12 @@
-const router = require('express').Router();
-const apiRoutes = require('./api');
-const htmlRoutes = require('./homeRoutes')
+const router = require("express").Router();
+const apiRoutes = require("./api");
+const pageRoutes = require("./pageRoutes");
 
-router.use('/', htmlRoutes)
-router.use('/api', apiRoutes);
+router.use("/", pageRoutes);
+router.use("/api", apiRoutes);
 
-// router.use((req, res) => {
-//   res.send("<h1>Wrong Route!</h1>")
-// });
+router.use((_req, res) => {
+  res.status(404).render("404");
+});
 
 module.exports = router;

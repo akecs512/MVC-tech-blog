@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">
+      {{#if postId}}
+      <a href="/posts/{{ postId }}">{{ title }}</a>
+      {{else}}
+      {{ title }}
+      {{/if}}
+    </h3>
+    <h4 class="card-subtitle">
+      Created by {{ creator }}&nbsp;on&nbsp;{{format_date createdAt}}
+    </h4>
+    <div class="card-text">{{ description }}</div>
+  </div>
+</div>

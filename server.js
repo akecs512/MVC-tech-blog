@@ -1,41 +1,56 @@
-const express = require('express');
-const session = require('express-session');
-const routes = require('./controllers');
-const exphbs = require('express-handlebars');
+const express = require("express");
+const session = require("express-session");
+const routes = require("./controllers");
+const exphbs = require("express-handlebars");
 const path = require("path");
 const helpers = require("./utils/helpers");
+const fs = require("fs");
+const Handlebars = require("handlebars");
 
-const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const sequelize = require("./config/connection");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({ helpers });
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+const hbs = exphbs.create({ helpers, extname: "hbs" });
+app.engine("hbs", hbs.engine);
+app.set("view engine", "hbs");
 
-const sess = {
-  secret: 'Super secret secret',
+const partialsDir = __dirname + "/views/partials";
+fs.readdirSync(partialsDir).forEach((filename) => {
+  if (filename.endsWith(".hbs")) {
+    const name = path.parse(filename).name;
+    Handlebars.registerPartial(
+      name,
+      fs.readFileSync(path.join(partialsDir, filename), "utf-8"),
+    );
+  }
+});
+
+const sessionConfig = {
+  secret: "Super secret secret",
   cookie: {
-    maxAge: 30 * 60 * 1000, 
+    maxAge: 30 * 60 * 1000,
     httpOnly: true,
     secure: false,
-    sameSite: 'strict',
+    sameSite: "strict",
   },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+  }),
 };
 
-app.use(session(sess));
+app.use(session(sessionConfig));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Server listening to http://localhost:${PORT}`));
+  app.listen(PORT, () =>
+    console.info(`Server listening to http://localhost:${PORT}`),
+  );
 });

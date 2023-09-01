@@ -1,11 +1,7 @@
-const router = require('express').Router();
-const User = require('../../models/Users');
+const router = require("express").Router();
+const User = require("../../models/User");
 
-// The `/api/user` endpoint
-
-// CREATE new user
-
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const dbUserData = await User.create({
       username: req.body.username,
@@ -13,20 +9,18 @@ router.post('/', async (req, res) => {
       password: req.body.password,
     });
     req.session.save(() => {
-      req.session.user_id = dbUserData.id;
+      req.session.userId = dbUserData.id;
       req.session.logged_in = true;
       req.session.username = dbUserData.username;
 
       res.status(200).json(dbUserData);
-
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Login
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
@@ -37,7 +31,7 @@ router.post('/login', async (req, res) => {
     if (!dbUserData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
 
@@ -46,28 +40,27 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
     req.session.save(() => {
-      req.session.user_id = dbUserData.id;
+      req.session.userId = dbUserData.id;
       req.session.logged_in = true;
       req.session.username = dbUserData.username;
 
-      res
-        .status(200)
-        .json({ user: dbUserData, message: 'You are now logged in!',
-               alert: "welcome back, user!" });
+      res.status(200).json({
+        user: dbUserData,
+        message: "You are now logged in!",
+        alert: `Welcome back, ${dbUserData.username}!`,
+      });
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Logout
-router.post('/logout', (req, res) => {
-  // if (req.session.loggedIn) {
-    if (req.session.logged_in) {
+router.post("/logout", (req, res) => {
+  if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
     });
@@ -77,7 +70,3 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
-
-
-
-

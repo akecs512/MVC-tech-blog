@@ -1,17 +1,22 @@
-<div class='menu-container' align="center">
-  <div class='menu-container' align="center">
-      <h2 class="bg-success"> {{user_name}}, Tech-Blog</h2>
-      <br />
+<div class="menu-container" align="center">
+  <div class="menu-container" align="center">
+    <h2 class="bg-success"> {{user_name}}, Tech-Blog</h2>
+    <br />
     {{#each techDatas as |techData|}}
-    <div class="gallery-name blog-size" >
-      <header style='display: flex; justify-content: space-between'><h4>{{techData.blog_title}}</h4><span>Created by {{techData.user_id}} on {{format_date techData.createdAt}}</span></header>
-    <section>{{techData.blog_description}}</section>
+      <div class="gallery-name blog-size">
+        <header style="display: flex; justify-content: space-between">
+          <h4><a href='/blogs/{{techData.id}}'>{{techData.blog_title}}</a></h4>
+          <span>Created by
+            {{techData.user_id}}&nbsp;on&nbsp;{{format_date
+              techData.createdAt}}</span>
+        </header>
+        <section>{{techData.blog_description}}</section>
       </div>
-     <br/>
+      <br />
     {{/each}}
-    
+
   </div>
 </div>
 
 <!-- This is the form for retrieving saved logs -->
-{{!-- <script src='/js/addBlog.js'></script> --}}
+{{! <script src='/js/addBlog.js'></script> }}

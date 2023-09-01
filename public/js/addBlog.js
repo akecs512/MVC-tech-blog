@@ -3,16 +3,15 @@
 
 async function newFormHandler(event) {
   event.preventDefault();
-  const blog_title = document.querySelector('#blog_title').value;
-  const blog_description = document.querySelector('#blog_description').value;
-  let leanNote =  blog_description.trim();
+  const blogTitle = document.querySelector('#blog-title').value;
+  const blogDescription = document.querySelector('#blog-description').value.trim();
   
   // Send post request to add a new tavel information
   let response = await fetch(`/api/tech`, {
     method: 'POST',
     body: JSON.stringify({
-      blog_title: blog_title,
-      blog_description: leanNote,
+      blog_title: blogTitle,
+      blog_description: blogDescription
 
     }),
     headers: {

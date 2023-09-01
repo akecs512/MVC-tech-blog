@@ -18,9 +18,8 @@ async function newFormHandler(event) {
       'Content-Type': 'application/json',
     },
   });
-  //if techblog is added, the 'all' template will be rerendered
   if (response.ok) {
-    window.location.replace('/techblog');
+    window.location.replace('/home');
   } else {
     alert('Failed to add comment');
   }

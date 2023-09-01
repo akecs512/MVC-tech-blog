@@ -32,8 +32,7 @@ router.get('/', async (req, res) => {
     const techDatas = dbtechData.map((tech_info) =>
     tech_info.get({plain: true})
     );
-        // res.render('techblog', {techDatas});
-        res.render('techblog', {
+        res.render('home', {
           techDatas: techDatas,
           logged_in: req.session.logged_in,
           user_name: req.session.username,

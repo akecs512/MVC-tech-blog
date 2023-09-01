@@ -2,16 +2,16 @@ const router = require("express").Router();
 const {TechInfo} = require("../models");
 const withAuth = require("../utils/auth");
 
-router.get('/', (req, res) => {
-  try {
-    res.render('homepage', {
-      logged_in: req.session.logged_in,
-      user_name: req.session.username,
-    });
-} catch (err) {
-    res.status(500).json(err);
-}
-});
+// router.get('/', (req, res) => {
+//   try {
+//     res.render('homepage', {
+//       // logged_in: req.session.logged_in,
+//       // user_name: req.session.username,
+//     });
+// } catch (err) {
+//     res.status(500).json(err);
+// }
+// });
 
 
 
@@ -25,12 +25,10 @@ router.get('/login', (req, res) => {
     }
 });
 
-router.get('/techblog', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
      // find all blog info
-    const dbtechData = await TechInfo.findAll({
-      where:{user_id: req.session.user_id}
-    });
+    const dbtechData = await TechInfo.findAll();
     const techDatas = dbtechData.map((tech_info) =>
     tech_info.get({plain: true})
     );

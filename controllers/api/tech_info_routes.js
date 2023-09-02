@@ -12,19 +12,6 @@ router.post("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-router.get("/:id", async (req, res) => {
-  const blog = await TechInfo.findOne({
-    where: { id: req.params.id },
-    include: Users,
-  });
-  res.render("blogs", {
-    blog: blog.get({ plain: true }),
-    logged_in: req.session.logged_in,
-    user_name: req.session.username,
-  });
-});
-
 router.post("/comments", async (req, res) => {
   try {
     const data = { ...req.body, user_id: req.session.user_id };
@@ -34,5 +21,4 @@ router.post("/comments", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 module.exports = router;

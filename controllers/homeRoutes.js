@@ -39,4 +39,16 @@ router.get("/dashboard", withAuth, (req, res) => {
   }
 });
 
+router.get("/posts/:id", async (req, res) => {
+  const blog = await TechInfo.findOne({
+    where: { id: req.params.id },
+    include: User,
+  });
+  res.render("blogs", {
+    blog: blog.get({ plain: true }),
+    logged_in: req.session.logged_in,
+    user_name: req.session.username,
+  });
+});
+
 module.exports = router;

@@ -1,7 +1,7 @@
 <div class="menu-container" align="center">
   <div class="menu-container" align="center">
     <h2 class="bg-success"> {{blog.user.username}}'s Tech Blog Post</h2>
-    {{> blogCard creator=blog.user.username title=blog.blog_title createdAt=blog.createdAt description=blog.blog_description}}
+    {{> postCard creator=blog.user.username title=blog.blog_title createdAt=blog.createdAt description=blog.blog_description}}
     {{#unless logged_in}}
       <big><a href="/login" id="login">Login</a> to add a comment</big>
     {{/unless}}

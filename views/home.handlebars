@@ -3,10 +3,8 @@
     <h2 class="bg-success">
       Everyone's Tech Blog</h2>
     {{#each blogPosts as |post|}}
-        {{> blogCard creator=post.user.username title=post.blog_title createdAt=post.createdAt description=post.blog_description postId=post.id}}
-
+        {{> postCard creator=post.user.username title=post.blog_title createdAt=post.createdAt description=post.blog_description postId=post.id}}
     {{/each}}
-
   </div>
 </div>
 

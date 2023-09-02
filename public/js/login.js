@@ -51,4 +51,3 @@ document
   .addEventListener("submit", signupFormHandler);
 
 const loggedIn = true;
-

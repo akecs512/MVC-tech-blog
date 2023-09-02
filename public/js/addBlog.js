@@ -5,7 +5,6 @@ async function newFormHandler(event) {
     .querySelector("#blog-description")
     .value.trim();
 
-  // Send post request to add a new tavel information
   let response = await fetch(`/api/tech`, {
     method: "POST",
     body: JSON.stringify({

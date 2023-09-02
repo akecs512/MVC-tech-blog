@@ -11,13 +11,11 @@ const logout = async () => {
   }
 };
 
-const addlogoutButton = () => {
-  const logoutButton = document.querySelector("#logout");
-  if (logoutButton) {
-    logoutButton.addEventListener("click", logout);
+const addEventListenerToLogoutTrigger = () => {
+  const logoutTrigger = document.querySelector("#logout");
+  if (logoutTrigger) {
+    logoutTrigger.addEventListener("click", logout);
   }
 };
 
-document.addEventListener("DOMContentLoaded", addlogoutButton);
-
-addlogoutButton();
+document.addEventListener("DOMContentLoaded", addEventListenerToLogoutTrigger);

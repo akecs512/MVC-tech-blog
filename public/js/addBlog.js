@@ -16,9 +16,9 @@ async function newFormHandler(event) {
     },
   });
   if (response.ok) {
-    window.location.replace("/home");
+    window.location.replace("/");
   } else {
-    alert("Failed to add comment");
+    alert("Failed to add blog post");
   }
 }
 

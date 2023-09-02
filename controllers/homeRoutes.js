@@ -17,7 +17,6 @@ router.get("/", async (req, res) => {
   try {
     const data = await TechInfo.findAll({ include: User });
     const blogPosts = data.map((tech_info) => tech_info.get({ plain: true }));
-    console.log(blogPosts);
     res.render("home", {
       blogPosts: blogPosts,
       logged_in: req.session.logged_in,

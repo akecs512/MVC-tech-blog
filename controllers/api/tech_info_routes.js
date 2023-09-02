@@ -12,6 +12,7 @@ router.post("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 router.post("/comments", async (req, res) => {
   try {
     const data = { ...req.body, user_id: req.session.user_id };
@@ -21,4 +22,26 @@ router.post("/comments", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get("/comments", async (req, res) => {
+  try {
+    const comments = await Comment.findAll();
+    res.status(200).json(comments);
+  } catch (error) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/comments/:id", async (req, res) => {
+  try {
+    const comments = await Comment.findAll({where: {post_id: req.params.id }});
+    res.status(200).json(comments);
+  } catch (error) {
+    res.status(500).json(err);
+  }
+});
+
+
+
+
 module.exports = router;

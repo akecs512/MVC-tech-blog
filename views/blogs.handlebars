@@ -1,6 +1,27 @@
 <div class="menu-container" align="center">
   <div class="menu-container" align="center">
     <h2 class="bg-success"> {{blog.user.username}}'s Tech Blog Post</h2>
-    	{{> blogCard creator=blog.user.username title=blog.blog_title createdAt=blog.createdAt description=blog.blog_description}}
+    {{> blogCard creator=blog.user.username title=blog.blog_title createdAt=blog.createdAt description=blog.blog_description}}
+    {{#unless logged_in}}
+      <big><a href="/login" id="login">Login</a> to add a comment</big>
+    {{/unless}}
+    {{#if logged_in}}
+      <form
+        class="new-post-form flex-column align-content-center"
+        style="gap: 12px;"
+      >
+        <label for="blog-comment">Add a Comment:</label>
+        <textarea
+          class="text-border"
+          id="blog-comment"
+          name="blog-comment"
+          rows="5"
+          cols="30"
+        ></textarea>
+        <button class="btn btn-primary btn-lg" type="submit" value="Submit">
+          Submit
+        </button>
+      </form>
+    {{/if}}
   </div>
 </div>

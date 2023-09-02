@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { TechInfo } = require("../models");
+const User = require('../models/Users');
 const withAuth = require("../utils/auth");
 
 router.get("/login", (req, res) => {
@@ -14,8 +15,9 @@ router.get("/login", (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const data = await TechInfo.findAll();
+    const data = await TechInfo.findAll({include: User});
     const blogPosts = data.map((tech_info) => tech_info.get({ plain: true }));
+    console.log(blogPosts)
     res.render("home", {
       blogPosts: blogPosts,
       logged_in: req.session.logged_in,

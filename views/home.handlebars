@@ -3,18 +3,18 @@
     <h2 class="bg-success">
       Everyone's Tech Blog</h2>
     <br />
-    {{#each blogPosts as |techData|}}
+    {{#each blogPosts as |post|}}
       <div class="gallery-name blog-size">
         <header style="display: flex; justify-content: space-between">
           <h4><a
-              href="/api/blogs/{{techData.id}}"
-            >{{techData.blog_title}}</a></h4>
+              href="/api/blogs/{{post.id}}"
+            >{{post.blog_title}}</a></h4>
           <span>Created by
-            {{techData.user_id}}&nbsp;on&nbsp;{{format_date
-              techData.createdAt
+            {{post.user.username}}&nbsp;on&nbsp;{{format_date
+              post.createdAt
             }}</span>
         </header>
-        <section>{{techData.blog_description}}</section>
+        <section>{{post.blog_description}}</section>
       </div>
       <br />
     {{/each}}

@@ -1,6 +1,6 @@
 async function newFormHandler(event) {
   event.preventDefault();
-  const comment = document.querySelector("#post-comment").value.trim();
+  const comment = document.querySelector("#comment-text").value.trim();
   const postId = document.querySelector("#post-id").value;
 
   let response = await fetch(`/api/tech/comments`, {
@@ -20,7 +20,7 @@ async function newFormHandler(event) {
   }
 }
 
-const form = document.querySelector("comment-form");
+const form = document.querySelector("#add-comment-form");
 if (form) {
   form.addEventListener("submit", newFormHandler);
 }

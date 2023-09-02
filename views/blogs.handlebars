@@ -8,15 +8,16 @@
     {{#if logged_in}}
       <form
         class="flex-column align-content-center"
-        id="comment-form"
+        id="add-comment-form"
         style="gap: 12px;"
+        method:
       >
-        <label for="post-comment">Add a Comment:</label>
+        <label for="comment-text">Add a Comment:</label>
         <input type="hidden" id="post-id" name="post-id" value={{blog.id}}>
         <textarea
           class="text-border"
-          id="post-comment"
-          name="post-comment"
+          id="comment-text"
+          name="comment-text"
           rows="5"
           cols="30"
         ></textarea>

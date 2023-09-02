@@ -7,14 +7,16 @@
     {{/unless}}
     {{#if logged_in}}
       <form
-        class="new-post-form flex-column align-content-center"
+        class="flex-column align-content-center"
+        id="comment-form"
         style="gap: 12px;"
       >
-        <label for="blog-comment">Add a Comment:</label>
+        <label for="post-comment">Add a Comment:</label>
+        <input type="hidden" id="post-id" name="post-id" value={{blog.id}}>
         <textarea
           class="text-border"
-          id="blog-comment"
-          name="blog-comment"
+          id="post-comment"
+          name="post-comment"
           rows="5"
           cols="30"
         ></textarea>
@@ -25,3 +27,5 @@
     {{/if}}
   </div>
 </div>
+
+<script src="/js/addComment.js"></script>

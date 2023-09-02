@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const TechInfo = require("../../models/Tech_Info");
-const User = require("../../models/Users");
 
 router.post("/", async (req, res) => {
   try {
@@ -11,5 +10,7 @@ router.post("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 
 module.exports = router;

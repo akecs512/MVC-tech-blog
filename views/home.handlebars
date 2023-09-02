@@ -2,21 +2,9 @@
   <div class="menu-container" align="center">
     <h2 class="bg-success">
       Everyone's Tech Blog</h2>
-    <br />
     {{#each blogPosts as |post|}}
-      <div class="gallery-name blog-size">
-        <header style="display: flex; justify-content: space-between">
-          <h4><a
-              href="/api/blogs/{{post.id}}"
-            >{{post.blog_title}}</a></h4>
-          <span>Created by
-            {{post.user.username}}&nbsp;on&nbsp;{{format_date
-              post.createdAt
-            }}</span>
-        </header>
-        <section>{{post.blog_description}}</section>
-      </div>
-      <br />
+        {{> postCard creator=post.user.username title=post.blog_title createdAt=post.createdAt description=post.blog_description postId=post.id}}
+
     {{/each}}
 
   </div>

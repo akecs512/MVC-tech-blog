@@ -4,6 +4,8 @@ const routes = require("./controllers");
 const exphbs = require("express-handlebars");
 const path = require("path");
 const helpers = require("./utils/helpers");
+const fs = require("fs");
+const Handlebars = require("handlebars");
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -14,6 +16,17 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
+
+const partialsDir = __dirname + "/views/partials";
+fs.readdirSync(partialsDir).forEach((filename) => {
+  if (filename.endsWith(".handlebars")) {
+    const name = path.parse(filename).name;
+    Handlebars.registerPartial(
+      name,
+      fs.readFileSync(path.join(partialsDir, filename), "utf-8"),
+    );
+  }
+});
 
 const sess = {
   secret: "Super secret secret",

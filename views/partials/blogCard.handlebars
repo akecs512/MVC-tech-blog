@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header flex-row justify-space-between">
+    <h4>
+      {{#if postId}}
+        <a href="/api/blogs/{{postId}}">{{title}}</a>
+      {{else}}
+        {{title}}
+      {{/if}}
+    </h4>
+    <span>Created by
+      {{creator}}&nbsp;on&nbsp;{{format_date createdAt}}</span>
+  </div>
+  <div class="card-body">{{description}}</div>
+</div>

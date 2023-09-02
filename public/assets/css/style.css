@@ -155,8 +155,7 @@ img {
 }
 
 .gallery-name {
-  text-shadow: 2px 2px 5px var(--secondary);
-  border: 10px groove var(--light);
+  border: 3pxpx groove var(--light);
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 10px;

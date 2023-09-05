@@ -1,5 +1,15 @@
 # Tech Blog
 
+## Table of Contents
+- [Description](#description)
+- [Usage](#usage)
+- [System Usage](#system-usage)
+    - [Styling](#styling)
+    - [VSCode Extensions](#VSCode-extensions)
+    - [Package.json Scripts](#Package.json-scripts)
+- [Special Thanks](#special-thanks)
+- [License](#license)
+
 ## Description
 A developer who writes about tech can have a  CMS-style blog site so they can publish articles, blog posts, and their thoughts and opinions.
 
@@ -37,6 +47,9 @@ These scripts have been added to help keep the code clean:
 - `npm run lint`: checks for lint errors
 - `npm run lint-fix`: tries to fix lint errors
 - `npm run prettier-fix`: standardize all the formatting
+
+### Special Thanks
+  Thanks to Adamk72 for his help cleaning up the code and helping me make it work.
 
 ## License
 

@@ -1,2 +1,23 @@
 <h1>{{ post.user.username }}'s Tech Blog Post</h1>
 {{> postCard creator=post.user.username title=post.title createdAt=post.createdAt description=post.description}}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Comments Form</title>
+</head>
+<body>
+    <div class="comment-box">
+        <h2>Comments</h2>
+        <form action="/createComment" method="POST">
+            <input type="hidden" name="postId" value="{{post._id}}">
+            <textarea name="content" placeholder="Enter your comment here"></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+        {{#each comments}}
+        <div class="comment">
+            <h3>{{this.user.username}}</h3>
+            <p>{{this.content}}</p>
+        </div>
+        {{/each}}
+    </body>

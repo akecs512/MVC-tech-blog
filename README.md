@@ -3,6 +3,8 @@
 ## Table of Contents
 - [Description](#description)
 - [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Deployed Website](#deployed-website)
 - [System Usage](#system-usage)
     - [Styling](#styling)
     - [VSCode Extensions](#VSCode-extensions)
@@ -30,6 +32,10 @@ When they click on the button to create a new blog post then the title and conte
 When they click on one of their existing posts in the dashboard they are able to delete or update their post and taken back to an updated dashboard.
 When they click on the logout option in the navigation they are signed out of the site.
 When they are idle on the site for more than a set time then they are able to view posts and comments but they are prompted to log in again before they can add, update, or delete posts.
+
+## Screenshots
+
+## Deployed Website
 
 ## System Usage
 ### Styling

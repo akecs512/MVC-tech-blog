@@ -6,7 +6,7 @@
 - [System Usage](#system-usage)
     - [Styling](#styling)
     - [VSCode Extensions](#VSCode-extensions)
-    - [Package.json Scripts](#Package-json-scripts)
+    - [Package json Scripts](#Package-json-scripts)
 - [Special Thanks](#special-thanks)
 - [License](#license)
 

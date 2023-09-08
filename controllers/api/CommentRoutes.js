@@ -3,17 +3,15 @@ const withAuth = require("../../utils/auth");
 const { Comment, Post, User } = require("../../models");
 
 router.post("/", async (req, res) => {
-  console.log(req.session)
   try {
     const newComment = {
       ...req.body,
       userId: req.session.userId,
     };
-    console.log(newComment);
     const postComment = await Comment.create(newComment);
     res.status(200).json(postComment);
   } catch (err) {
-    console.log(">>> Failed to create comment:", err);
+    console.error(">>> Failed to create comment:", err);
     res.status(500).json(err);
   }
 });
@@ -27,7 +25,7 @@ router.get("/", async (req, res) => {
     );
     res.status(200).json(commentData);
   } catch (err) {
-    console.log(err);
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -47,7 +45,7 @@ router.delete("/comment/:id", withAuth, async (req, res) => {
     }
     res.status(200).json({ message: "Comment deleted successfully" });
   } catch (err) {
-    console.log(err);
+    console.error(err);
     res.status(500).json(err);
   }
 });

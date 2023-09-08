@@ -3,7 +3,7 @@ const withAuth = require("../../utils/auth");
 const { Comment, Post, User } = require("../../models");
 
 router.post("/", async (req, res) => {
-  console.log(req.body);
+  console.log(req.body, req.session.user_id);
   try {
     const newComment = {
       ...req.body,
@@ -19,10 +19,9 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const commentData = await Comment.findAll();
-    //({
-      // include: [User, Post],
-    // });
+    const commentData = await Comment.findAll({
+      include: [User],
+    });
     res.status(200).json(commentData);
   } catch (err) {
     console.log(err);

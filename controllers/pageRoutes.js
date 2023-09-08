@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const { Post } = require("../models");
-const User = require("../models/User");
+const { Post, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/login", (req, res) => {
@@ -15,7 +14,7 @@ router.get("/login", (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const data = await Post.findAll({ include: User });
+    const data = await Post.findAll({ include: User, Comment});
     const posts = data.map((post) => post.get({ plain: true }));
     res.render("home", {
       posts: posts,

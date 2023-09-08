@@ -14,7 +14,7 @@ router.get("/login", (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const data = await Post.findAll({ include: User, Comment});
+    const data = await Post.findAll({ include: User, Comment });
     const posts = data.map((post) => post.get({ plain: true }));
     res.render("home", {
       posts: posts,
@@ -42,7 +42,11 @@ router.get("/posts/:id", async (req, res) => {
     where: { id: req.params.id },
     include: User,
   });
-  res.render("selectedPost", { post: post.get({ plain: true }) });
+  res.render("selectedPost", {
+    logged_in: req.session.logged_in,
+    user_name: req.session.username,
+    post: post.get({ plain: true }),
+  });
 });
 
 module.exports = router;

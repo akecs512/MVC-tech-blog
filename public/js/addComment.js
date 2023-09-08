@@ -3,17 +3,16 @@ async function newFormHandler(event) {
   const title = document.querySelector("#comment-title").value;
   const text = document.querySelector("#comment-text").value.trim();
 
-  let response = await fetch(`/api/comments`, {
+  const response = await fetch(`/api/comments`, {
     method: "POST",
-    body: JSON.stringify({ title, text, username: "foo" }),
+    body: JSON.stringify({ title, text }),
     headers: {
       "Content-Type": "application/json",
     },
   });
   if (response.ok) {
-    window.location.replace("/");
+    // window.location.replace("/");
   } else {
-    console.log(response);
     alert("Failed to add comment");
   }
 }

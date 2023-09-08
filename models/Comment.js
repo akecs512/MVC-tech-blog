@@ -10,10 +10,6 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     created_on: {
       type: DataTypes.DATE,
       allowNull: false,

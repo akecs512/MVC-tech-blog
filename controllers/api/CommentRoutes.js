@@ -3,10 +3,11 @@ const withAuth = require("../../utils/auth");
 const { Comment, Post, User } = require("../../models");
 
 router.post("/", async (req, res) => {
+  console.log(req.session)
   try {
     const newComment = {
       ...req.body,
-      user_id: req.session.user_id,
+      userId: req.session.userId,
     };
     console.log(newComment);
     const postComment = await Comment.create(newComment);
@@ -37,7 +38,7 @@ router.delete("/comment/:id", withAuth, async (req, res) => {
     const deletePost = await Comment.destroy({
       where: {
         id: commentId,
-        user_id: req.session.user_id,
+        userId: req.session.userId,
       },
     });
 

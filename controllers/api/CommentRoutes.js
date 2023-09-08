@@ -8,7 +8,7 @@ router.post("/", async (req, res) => {
       ...req.body,
       user_id: req.session.user_id,
     };
-    console.log(newComment)
+    console.log(newComment);
     const postComment = await Comment.create(newComment);
     res.status(200).json(postComment);
   } catch (err) {
@@ -19,9 +19,11 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const commentData = await Comment.findAll({
-      include: [User],
-    });
+    const commentData = await Comment.findAll(
+    //   {
+    //   include: [User],
+    // }
+    );
     res.status(200).json(commentData);
   } catch (err) {
     console.log(err);

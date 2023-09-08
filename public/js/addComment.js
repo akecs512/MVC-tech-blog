@@ -1,6 +1,6 @@
 async function newFormHandler(event) {
   event.preventDefault();
-  const title = document.querySelector("#comment-title").value;
+  const title = document.querySelector("#comment-title").value.trim();
   const text = document.querySelector("#comment-text").value.trim();
 
   const response = await fetch(`/api/comments`, {

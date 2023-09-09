@@ -1,9 +1,12 @@
 <h1>{{ post.user.username }}'s Tech Blog Post</h1>
 {{> postCard creator=post.user.username title=post.title createdAt=post.createdAt description=post.description}}
-
-<h1>Comments</h1>
+<div>
+  <div class="comments-header">
+Comments
+</div>
 {{>commentCard comments=comments creator=post.user.username text=comment.text createdAt=post.createdAt}}
-<br>
+</div>
+
 <div>
     <input type="hidden" id="post-id" value="{{ post.id }}">
     <h2>Add Comments</h2>

@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="comment-card-body">
+    {{#if comments}}
+  
+  {{#each comments as |comment|}}
+<h4>
+    {{comment.text}}
+    </h4>
+    <h5 class="card-subtitle">
+      Created by {{ creator }}&nbsp;on&nbsp;{{format_date createdAt}}
+    </h5>
+    <br>
+  {{/each}}
+
+{{/if}}
+    
+
+  </div>
+</div>

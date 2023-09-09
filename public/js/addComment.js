@@ -1,12 +1,11 @@
 async function newFormHandler(event) {
   event.preventDefault();
-  const title = document.querySelector("#comment-title").value;
   const text = document.querySelector("#comment-text").value.trim()
   const postId = document.querySelector("#post-id").value;
 
   const response = await fetch(`/api/comments`, {
     method: "POST",
-    body: JSON.stringify({ title, text, postId }),
+    body: JSON.stringify({ text, postId }),
     headers: {
       "Content-Type": "application/json",
     },

@@ -29,7 +29,11 @@ form > button[type="submit"] {
 .card-body {
   border: #413746 10px groove;
 }
+.comment-card-body {
+  
+  border: #413746 5px groove;
 
+}
 h1 {
   background-color: #413746;
   color: #fff;

@@ -26,9 +26,13 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/dashboard", withAuth, (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
   try {
+    const data = await Post.findAll({ include: User, Comment });
+    const posts = data.map((post) => post.get({ plain: true }));
+
     res.render("dashboard", {
+      posts: posts,
       logged_in: req.session.logged_in,
       user_name: req.session.username,
     });

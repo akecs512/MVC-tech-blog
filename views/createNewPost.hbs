@@ -1,23 +1,10 @@
-<div>
-<h1 class="post-header">
-  Tech posts for
+<h1>
+  Tech post for
   {{ user_name }}
-  </h1>
-  </div>
+  &mdash; Create New Post
 
 
-<div class="tech-posts">
-  {{#each posts as |post|}}
-  {{>dashboardCard title=post.title createdAt=post.createdAt postId=post.id}}
-  {{/each}}
-</div>
-
-
-
-
-
-
-{{!-- </h1>
+</h1>
 <form id="new-post-form">
   <div class="form-group">
     <label for="post-title">Title:</label>
@@ -33,7 +20,7 @@
     ></textarea>
   </div>
   <button class="btn btn-primary" type="submit" value="submit">Submit</button>
-</form> --}}
+</form>
 
 
 <script src="/js/addPost.js"></script>

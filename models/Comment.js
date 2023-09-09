@@ -10,11 +10,6 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    created_on: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
-    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,

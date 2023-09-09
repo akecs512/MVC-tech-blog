@@ -40,11 +40,14 @@ router.get("/dashboard", withAuth, (req, res) => {
 router.get("/posts/:id", async (req, res) => {
   const post = await Post.findOne({
     where: { id: req.params.id },
-    include: User,
+    include: [User, Comment],
   });
+  const comments = post.comments.map((comment) => comment.get({ plain: true }));
+  console.log(comments)
   res.render("selectedPost", {
     logged_in: req.session.logged_in,
     user_name: req.session.username,
+    comments,
     post: post.get({ plain: true }),
   });
 });

@@ -1,5 +1,18 @@
 <h1>{{ post.user.username }}'s Tech Blog Post</h1>
 {{> postCard creator=post.user.username title=post.title createdAt=post.createdAt description=post.description}}
+  
+{{#if comments}}
+  <h3>Comments</h3>
+  {{#each comments as |comment|}}
+  <li>
+    {{comment.title}}
+  </li>
+    {{!-- {{> commentCard}} --}}
+  {{/each}}
+{{else}}
+  <h3>No Comments Yet</h3>
+{{/if}}
+
 
 <h3>Add a Comment</h3>
 <div class="row">

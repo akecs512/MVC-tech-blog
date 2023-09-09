@@ -12,7 +12,7 @@ async function newFormHandler(event) {
     },
   });
   if (response.ok) {
-    // window.location.replace("/");
+    window.location.replace("/posts/" + postId);
   } else {
     alert("Failed to add comment");
   }

@@ -41,7 +41,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
-router.get("/posts/:id", async (req, res) => {
+router.get("/posts/:id", withAuth, async (req, res) => {
   const post = await Post.findOne({
     where: { id: req.params.id },
     include: [User, Comment],

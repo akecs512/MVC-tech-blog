@@ -5,7 +5,13 @@
   <div class="comments-header">
 Comments
 </div>
-{{>commentCard comments=comments creator=post.user.username text=comment.text createdAt=post.createdAt}}
+{{#if comments}}
+  {{#each comments as |comment|}}
+
+{{> commentCard comments=comments creator=comment.user text=comment.text createdAt=comment.createdAt}}
+
+  {{/each}}
+{{/if}}
 </div>
 </div>
 <div>

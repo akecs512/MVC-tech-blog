@@ -28,7 +28,7 @@ router.get("/", async (req, res) => {
 
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
-    const data = await Post.findAll({ include: User, Comment });
+    const data = await Post.findAll({ include: [User, Comment], where: { userId: req.session.userId } });
     const posts = data.map((post) => post.get({ plain: true }));
 
     res.render("dashboard", {
@@ -46,8 +46,13 @@ router.get("/posts/:id", withAuth, async (req, res) => {
     where: { id: req.params.id },
     include: [User, Comment],
   });
-  const comments = post.comments.map((comment) => comment.get({ plain: true }));
-  console.log(comments)
+  
+  const comments = await Promise.all(post.comments.map(async (rawComment) => {
+    const comment = rawComment.get({ plain: true });
+    const userRaw = await User.findOne({ where: {id: comment.userId }})
+    const user = userRaw.get({plain: true})
+    return { ...comment, user: user.username  }
+  }));
   res.render("selectedPost", {
     logged_in: req.session.logged_in,
     user_name: req.session.username,

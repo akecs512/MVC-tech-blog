@@ -1,18 +1,14 @@
 <div class="card">
   <div class="comment-card-body">
-    {{#if comments}}
-  
-  {{#each comments as |comment|}}
+    
 <h4 class="added-comment">
-    {{comment.text}}
+    {{text}}
     </h4>
     <h5 class="card-subtitle">
       --Posted by {{ creator }}&nbsp;on&nbsp;{{format_date createdAt}}
     </h5>
     <br>
-  {{/each}}
 
-{{/if}}
     
 
   </div>

@@ -1,23 +1,31 @@
-<h1>{{ post.user.username }}'s Tech Blog Post</h1>
+<div class="post-body">
 {{> postCard creator=post.user.username title=post.title createdAt=post.createdAt description=post.description}}
 <div>
+  <div class="comment-card">
   <div class="comments-header">
 Comments
 </div>
 {{>commentCard comments=comments creator=post.user.username text=comment.text createdAt=post.createdAt}}
 </div>
-
+</div>
 <div>
+  <form id="new-comment-form">
+  <div class="comment-form"> 
+      <label for="form-title">Add Comments:</label>
+      
     <input type="hidden" id="post-id" value="{{ post.id }}">
-    <h2>Add Comments</h2>
-    <textarea id="comment-text" name="comment-box" rows="4" cols="180"></textarea>
- </div>
- <br>
+      
+     </div>
+       <div class="comment-form-group">  
+    <textarea class="box-text" id="comment-text" name="comment-box" rows="4" cols="180"></textarea>
+</div>
     <button id="new-comment" type="submit" value="submit" name="action">
       Submit
     </button>
-    </div>
+  
   </form> 
+</div>
+</div>
 </div>
 <script src="/js/addComment.js"></script>
 

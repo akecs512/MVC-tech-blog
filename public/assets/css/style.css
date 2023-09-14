@@ -47,6 +47,9 @@ form > button[type="submit"] {
   font-size: 20x;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+#header {
+  background-color: #4f5078;
+}
 
 
 h1 {

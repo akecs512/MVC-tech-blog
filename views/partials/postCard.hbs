@@ -1,5 +1,10 @@
 <div class="card">
   <div class="card-body">
+    <div class="card-header">
+       <h4>{{format_date createdAt}}</h4>
+         <h4> {{ creator }}</h4>
+         </div>
+    <div>
     <h3 class="card-title">
       {{#if postId}}
       <a href="/posts/{{ postId }}">{{ title }}</a>
@@ -7,9 +12,8 @@
       {{ title }}
       {{/if}}
     </h3>
-    <h4 class="card-subtitle">
-      Created by {{ creator }}&nbsp;on&nbsp;{{format_date createdAt}}
-    </h4>
-    <div class="card-text">{{ description }}</div>
+    </div>
+       <div class="card-text">{{ description }}</div>
+ 
   </div>
 </div>

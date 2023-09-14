@@ -1,9 +1,13 @@
-<div class="card">
-  {{!-- <div class="card-body"> --}}
-    <h3 class="card-title">
+
+  <div class="card-body">
+    <div class="post-list">
+    <h3 class="card-list">
+
       {{#if postId}}
-      <a href="/posts/{{ postId }}">{{ title }} {{format_date createdAt}}</a>
+      <a href="/posts/{{ postId }}"><span class="list-title">{{ title }}</span><span class="list-date">{{format_date createdAt}}</span></a>
       {{else}}
       {{ title }}
       {{/if}}
-    </h3>
+   </h3>
+    </div>
+    </div>

@@ -3,11 +3,12 @@ form > button[type="submit"] {
 }
 
 .navbar {
-  background-color: #e7d6f0;
+  background-color: #4f5078 ;
+  color: #fff;
+
 }
 
 .d-flex {
-  background-color: #a09aa4;
   text-shadow: 2px 2px 5px var(--secondary);
   border: 10px groove var(--light);
   padding-top: 10px;
@@ -17,24 +18,46 @@ form > button[type="submit"] {
 }
 
 .card-title {
-  color: #fff;
-  background-color: #413746;
+  /* color: #fff; */
+  font-size: 30px;
   border: 10px groove var(--light);
   padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
+  
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card-body {
-  border: #413746 5px groove;
   padding: 10px;
   margin-bottom: 10px;
+  
 }
+
+.card-header {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 0;
+  /* color: #fff; */
+  border-bottom: 1px solid #4f5078;
+}
+.card-text {
+  font-size: 20x;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 
 h1 {
   background-color: #413746;
   color: #fff;
+}
+h4 {
+  font-size: 15px;
+  display:flex;
+  justify-content: space-between;
+  align-items: end;
 }
 
 .comments-header {
@@ -42,3 +65,43 @@ h1 {
   color: #fff;
   font-size: 1.5rem;
 }
+
+.nav-link {
+  color: #fff;
+}
+/* 
+.container-fluid {
+  background-color: #4f5078;
+} */
+
+.main-title {
+  color: #ad5050;
+  background-color:#fff ;
+  display: flex;
+  justify-content: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px;
+}
+
+a {
+  color: #7eAee0;
+  text-decoration: none;
+ 
+ 
+}
+
+.post-list  {
+  background-color: #4f5078;
+
+}
+
+.card-list a{
+  display: flex;
+  justify-content: space-between;
+} 
+
+
+
+
+
+

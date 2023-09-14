@@ -1,17 +1,18 @@
-<div>
+{{!-- <div>
 <h1 class="post-header">
   Tech posts for
   {{ user_name }}
   </h1>
-  </div>
+  </div> --}}
 
 
 <div class="tech-posts">
+  <div class="post-list">
   {{#each posts as |post|}}
   {{>dashboardCard title=post.title createdAt=post.createdAt postId=post.id}}
   {{/each}}
 </div>
-
+</div>
 
 
 

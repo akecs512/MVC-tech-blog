@@ -9,7 +9,7 @@
       {{ title }}
       {{/if}}
    </h3>
-  <buttton class="btn btn-primary delete-button" data-id={{postId}} >Delete</buttton>
-    <buttton class="btn btn-primary edit-button" data-id={{postId}} >Edit</buttton>
+  <button class="btn btn-primary delete-button" data-id={{postId}} >Delete</button>
+    <button onClick='window.location.replace("/edit/" + {{postId}} )' class="btn btn-primary edit-button" data-id={{postId}} >Edit</button>
 
     </div>

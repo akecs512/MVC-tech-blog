@@ -1,15 +1,10 @@
-<h1>
-  Tech post for
-  {{ user_name }}
-  &mdash; Create New Post
 
-
-</h1>
 <form id="new-post-form">
   <div class="form-group">
     <label for="post-title">Title:</label>
     <input class="form-control" type="text" id="post-title" name="post-title" />
   </div>
+  
   <div class="form-group">
     <label for="post-description">Description:</label>
     <textarea
@@ -19,8 +14,5 @@
       rows="5"
     ></textarea>
   </div>
-  <button class="btn btn-primary" type="submit" value="submit">Submit</button>
+  <button class="btn btn-primary" type="submit" value="submit">{{ buttonText}} </button>
 </form>
-
-
-<script src="/js/addPost.js"></script>

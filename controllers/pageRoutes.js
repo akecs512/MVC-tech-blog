@@ -72,12 +72,6 @@ router.get("/edit/:id", withAuth, async (req, res) => {
     include: [User, Comment],
   });
   
-  const comments = await Promise.all(post.comments.map(async (rawComment) => {
-    const comment = rawComment.get({ plain: true });
-    const userRaw = await User.findOne({ where: {id: comment.userId }})
-    const user = userRaw.get({plain: true})
-    return { ...comment, user: user.username  }
-  }));
   res.render("editPost", {
     logged_in: req.session.logged_in,
     user_name: req.session.username,

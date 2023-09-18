@@ -33,7 +33,7 @@ router.get('/:id', async (req, res) => {
 
 
 //route to update a post
-router.put("/edit/:id", withAuth, async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   console.log(req.body);
   try {
     const postData = await Post.update(req.body, {

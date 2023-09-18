@@ -1,23 +1,22 @@
-{{!-- <div>
-<h1 class="post-header">
-  Tech posts for
-  {{ user_name }}
+{{!--
+<div>
+  <h1 class="post-header">
+    Tech posts for
+    {{ user_name }}
   </h1>
-  </div> --}}
-
+</div>
+--}}
 
 <div class="tech-posts">
   <div class="post-list">
-  {{#each posts as |post|}}
-  {{>dashboardCard title=post.title createdAt=post.createdAt postId=post.id }}
-  {{/each}}
+    {{#each posts as |post|}}
+    {{>dashboardCard title=post.title createdAt=post.createdAt postId=post.id }}
+    {{/each}}
+  </div>
 </div>
-</div>
 
+{{> editPostForm buttonText="Add Post" method="POST"}}
 
-{{> editPostForm buttonText="Add Post"}}
-
-
-<script src="/js/addPost.js"></script>
+<script src="/js/editPost.js"></script>
 
 <script src="/js/deletePost.js"></script>

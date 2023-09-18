@@ -1,6 +1,6 @@
-<form id="new-post-form">
+<form id="new-post-form" method="{{ method }}">
   <div class="form-group">
-     <input type="hidden" id="post-id" value="{{ post.id }}">
+    <input type="hidden" id="post-id" value="{{ post.id }}" />
     <label for="post-title">Title:</label>
     <input
       class="form-control"
@@ -18,8 +18,7 @@
       id="post-description"
       name="post-description"
       rows="5"
-    >
-{{ description }}
+      >{{ description }}
     </textarea>
   </div>
   <button class="btn btn-primary" type="submit" value="submit">

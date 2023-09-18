@@ -33,54 +33,36 @@ router.get('/:id', async (req, res) => {
 
 
 //route to update a post
-// router.put("/edit:id", withAuth, async (req, res) => {
-//   console.log(req.body);
-//   try {
-//     const postData = await Post.update(req.body, {
-//       where: {
-//         id: req.params.id,
-//       },
-//     });
+router.put("/edit/:id", withAuth, async (req, res) => {
+  console.log(req.body);
+  try {
+    const postData = await Post.update(req.body, {
+      where: {
+        id: req.params.id,
+      },  
+    });
 
-//     if (!postData) {
-//       res.status(404).json({ message: "No post found with this id!" });
-//       return;
-//     }
+    if (!postData) {
+      res.status(404).json({ message: "No post found with this id!" });
+      return;
+    }
 
-//     res.status(200).json(postData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// })
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
-// update post
-// router.put('/:id',async (req, res) => {
-//   const post = await Post.findOne({ where: { id: req.params.id },}, )
-//   post.title = req.body.title;
-//   post.description = req.body.description;
-//   post.id = req.body.id;
-//   await post.save();
-//   res.status(200)
-//   res.send(JSON.stringify(post));
-
-//   // update post data
-//   Post.update(req.body, {
-//     where: {
-//       id: req.params.id,
-//     },
-//   })
-// })
 
 // //route to delete a post
-// router.delete('/:id', async (req, res) => {
-//   const post = await Post.findOne({ where: { id: req.params.id },}, )
+router.delete('/:id', async (req, res) => {
+  const post = await Post.findOne({ where: { id: req.params.id },}, )
 
-//   await post.destroy();
-//   res.status(200)
-//   res.send(JSON.stringify(post));
+  await post.destroy();
+  res.status(200)
+  res.send(JSON.stringify(post));
 
-  // delete a category by its `id` value
-// });
+});
 
 
 module.exports = router;

@@ -1,6 +1,5 @@
 <div class="post-body">
-  {{> postCard creator=post.user.username title=post.title createdAt=post.createdAt description=post.description}}
-  <div>
+
     {{> editPostForm buttonText="Update Post" method="PUT" title=post.title description=post.description postId=post.id}}
 
     <script src="/js/editPost.js"></script>

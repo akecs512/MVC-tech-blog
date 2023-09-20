@@ -34,11 +34,9 @@ When they click on the logout option in the navigation they are signed out of th
 When they are idle on the site for more than a set time then they are able to view posts and comments but they are prompted to log in again before they can add, update, or delete posts.
 
 ## Screenshots
-<img width="1 <img width="1421" alt="Screen Shot 2023-09-18 at 1 43 01 PM" src="https://github.com/akecs512/MVC-tech-blog/assets/79340489/4b4a2be8-a5e8-4ef9-8c34-ec594f96d8f8">
-425" alt="Screen Shot 2023-09-18 at 1 42 26 PM" src="https://github.com/akecs512/MVC-tech-blog/assets/79340489/590689b8-42d0-498b-85b2-2a45c4bbd7c1">
-
-<img width="1408" alt="Screen Shot 2023-09-18 at 1 42 15 PM" src="https://github.com/akecs512/MVC-tech-blog/assets/79340489/d3c63c73-8bdd-4efc-8a24-148cc7220916">
-
+<img width="1421" alt="Login Screenshot" src="https://github.com/akecs512/MVC-tech-blog/assets/79340489/e9bfa218-0098-4775-b510-a069b4c56a47">
+<img width="1408" alt="HomePage Screenshot" src="https://github.com/akecs512/MVC-tech-blog/assets/79340489/6a4d4a7d-f203-47f7-b820-202c9b35a27c">
+<img width="1425" alt="Dashboard screenshot" src="https://github.com/akecs512/MVC-tech-blog/assets/79340489/70178d4b-7225-4f75-93a8-2a779a811201">
 
 ## Deployed Website
 

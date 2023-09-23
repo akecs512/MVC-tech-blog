@@ -39,6 +39,7 @@ When they are idle on the site for more than a set time then they are able to vi
 <img width="1425" alt="Dashboard screenshot" src="https://github.com/akecs512/MVC-tech-blog/assets/79340489/70178d4b-7225-4f75-93a8-2a779a811201">
 
 ## Deployed Website
+https://tech-blog-app-mvc-446a1fb32162.herokuapp.com/
 
 ## System Usage
 ### Styling
